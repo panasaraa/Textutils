@@ -25,11 +25,10 @@ const handleclearClick = () => {
 }
 
 
-const handlecopyText = () => {
+const handlecopyText = async () => {
     // console.log("upercase was clicked", + text);
-    let newText = 'text copy ';
-    setText(newText)
-    props.showAlert("Convert to copyText!", "danger")
+    await navigator.clipboard.writeText(text);
+    props.showAlert("copyText!", "danger")
 }
 
 
